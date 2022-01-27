@@ -24,3 +24,6 @@ circ.refract_out_beams()# refract the beams outside
 circ.setup_figure(c='w')
 circ.plot()
 ```
+
+
+![Alt text](https://github.com/dodogabrie/CircleRefraction/blob/main/docs/figures/1_water.png "a title")
