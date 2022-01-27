@@ -4,16 +4,17 @@ sys.path.append('src/')
 from circle import circle
 
 def test_entering():
-    circ = circle(1.333)
-    n = 200
-    circ.std_cases(n, kind = 'right',)# interval = [0.6, 1])
-    circ.std_cases(n, kind = 'left',)# interval = [0.6, 1])
-    circ.std_cases(n, kind = 'upper',)# interval = [0.6, 1])
-    circ.std_cases(n, kind = 'lower',)# interval = [0.6, 1])
-    circ.refract_in_beams()
-    circ.bouncing_beams(5)
-    circ.refract_out_beams()
-    circ.plot_beams(c='w', alpha = 0.1)
+    water_idx = 1.333 # water's refraction index
+    n = 20 # number of light beams
+    
+    circ = circle(water_idx) # initialize the circle
+    # Entering from the right 
+    circ.std_cases(n, kind = 'right', interval = [0.6, 1])
+    circ.refract_in_beams() # refract the beams inside
+    circ.bouncing_beams(2)  # 2 internal reflections
+    circ.refract_out_beams()# refract the beams outside
+    circ.setup_figure(c='w')
+    circ.plot()
 
 if __name__ == '__main__':
     test_entering()
