@@ -46,7 +46,7 @@ class circle:
 
     def bouncing_beams(self, k):
         for beam in self.beams:
-            for _ in range(k):
+            for _ in range(k+1):
                 beam.circle_intersection(external=False)
                 beam.norm_circle()
                 beam.reflect_transform()
