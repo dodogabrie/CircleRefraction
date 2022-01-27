@@ -55,16 +55,16 @@ class circle:
         for beam in self.beams:
             self.ax.plot(beam.x, beam.y, **kwargs)
 
-    def setup_figure(self, circle_color = 'blue', **kwargs):
-        self.setup_circle_figure(circle_color=circle_color)
+    def setup_figure(self, circle_color = 'blue', axis_lim = 2, **kwargs):
+        self.setup_circle_figure(circle_color=circle_color, axis_lim = axis_lim)
         self.setup_beams(**kwargs)
 
-    def setup_circle_figure(self, circle_color = 'blue'):
+    def setup_circle_figure(self, circle_color = 'blue', axis_lim = 2):
         plt.style.use('dark_background')
         fig = plt.figure(figsize = (8, 8))
         ax = fig.add_subplot(111, aspect='equal')
-        plt.xlim(-2*self.r + self.xc, 2*self.r + self.xc)
-        plt.ylim(-2*self.r + self.yc, 2*self.r + self.yc)
+        plt.xlim(-axis_lim*self.r + self.xc, axis_lim*self.r + self.xc)
+        plt.ylim(-axis_lim*self.r + self.yc, axis_lim*self.r + self.yc)
         ax.add_patch(
             patches.Circle(
                 (self.xc, self.yc),
