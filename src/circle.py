@@ -51,13 +51,15 @@ class circle:
                 beam.norm_circle()
                 beam.reflect_transform()
 
-    def plot_beams(self, **kwargs):
-        self.setup_circle_figure()
+    def setup_beams(self, **kwargs):
         for beam in self.beams:
             self.ax.plot(beam.x, beam.y, **kwargs)
-        plt.show()
 
-    def setup_circle_figure(self):
+    def setup_figure(self, circle_color = 'blue', **kwargs):
+        self.setup_circle_figure(circle_color=circle_color)
+        self.setup_beams(**kwargs)
+
+    def setup_circle_figure(self, circle_color = 'blue'):
         plt.style.use('dark_background')
         fig = plt.figure(figsize = (8, 8))
         ax = fig.add_subplot(111, aspect='equal')
@@ -68,8 +70,16 @@ class circle:
                 (self.xc, self.yc),
                 self.r,
                 fill = True,
-                color='b'
+                color = circle_color
             )
         )
         self.fig = fig
         self.ax = ax
+        
+    def save_figure(self, path_to_fig, **kwargs):
+        plt.savefig(path_to_fig, **kwargs)
+
+    def plot(self):
+        plt.show()
+
+
