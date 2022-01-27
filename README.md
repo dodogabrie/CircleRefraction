@@ -25,5 +25,9 @@ circ.setup_figure(c='w')
 circ.plot()
 ```
 
-
-![Alt text](https://github.com/dodogabrie/CircleRefraction/blob/main/docs/figures/1_water.png "a title")
+```{image} https://github.com/dodogabrie/CircleRefraction/blob/main/docs/figures/1_water.png
+:alt: fishy
+:class: bg-primary mb-1
+:width: 200px
+:align: center
+```
