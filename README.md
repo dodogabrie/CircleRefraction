@@ -27,4 +27,4 @@ circ.plot()
 
 Results:
 
-<img src="https://github.com/dodogabrie/CircleRefraction/blob/main/docs/figures/1_water.png" alt="drawing" width="300"/>
+<img src="https://github.com/dodogabrie/CircleRefraction/blob/main/docs/figures/1_water.png" alt="drawing" width="400"/>
